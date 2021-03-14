@@ -1,7 +1,6 @@
 import React from 'react';
 import { Props } from '../types';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,12 +35,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
+      padding: theme.spacing(0),
     },
   }),
 );
 
-const AppLayout: React.FC<Props> = ({ children }: Props) => {
+const AppTemplate: React.FC<Props> = ({ children }: Props) => {
   const classes = useStyles();
 
   return (
@@ -86,10 +85,10 @@ const AppLayout: React.FC<Props> = ({ children }: Props) => {
       </Drawer>
       <main className={classes.content}>
         <Toolbar />
-        <Container>{children}</Container>
+        {children}
       </main>
     </div>
   );
 };
 
-export { AppLayout };
+export { AppTemplate };

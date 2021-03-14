@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import React from 'react';
-import { AppLayout } from '../components/layouts/App/views/Layout';
+import { AppTemplate } from '../components/templates/App/views';
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
 
@@ -22,9 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <AppLayout>
+          <AppTemplate>
             <Component {...pageProps} />
-          </AppLayout>
+          </AppTemplate>
         </ThemeProvider>
       </MuiThemeProvider>
     </StylesProvider>
