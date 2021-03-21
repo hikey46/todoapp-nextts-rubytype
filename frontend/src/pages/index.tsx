@@ -1,12 +1,23 @@
-import {Button} from '@material-ui/core'
-import React from 'react'
+import React from 'react';
+import { GetServerSideProps } from 'next';
+import TaskList from '../components/organisms/TaskList/index';
+import { getTasks, Task } from '../models/Task';
 
-const Home: React.FC = () => {
+export const getServerSideProps: GetServerSideProps = async (_) => {
+  const tasks = await getTasks();
+
+  return {
+    props: {
+      tasks,
+    },
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default function Home({ tasks }: { tasks: Task[] }) {
   return (
-    <Button color="primary" variant="contained">
-      ボタン
-    </Button>
-  )
+    <>
+      <TaskList tasks={tasks} />
+    </>
+  );
 }
-
-export default Home

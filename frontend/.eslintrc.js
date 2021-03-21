@@ -27,7 +27,7 @@ module.exports = {
   rules: {
     'react/destructuring-assignment': ['off'],
     'arrow-body-style': 0,
-    'prefer-default-export': false,
+    'prefer-default-export': 0,
     'lines-between-class-members': [
       'error',
       'always',
@@ -40,8 +40,8 @@ module.exports = {
     'no-void': [
       'error',
       {
-        allowAsStatement: true
-      }
+        allowAsStatement: true,
+      },
     ],
     'padding-line-between-statements': [
       'error',
@@ -54,11 +54,11 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        'vars': 'all',
-        'args': 'after-used',
-        'argsIgnorePattern': '_',
-        'ignoreRestSiblings': false,
-        'varsIgnorePattern': '_',
+        vars: 'all',
+        args: 'after-used',
+        argsIgnorePattern: '_',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '_',
       },
     ],
     'import/extensions': [
@@ -69,14 +69,6 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
-      },
-    ],
-    'prefer-arrow/prefer-arrow-functions': [
-      'error',
-      {
-        disallowPrototype: true,
-        singleReturnOnly: false,
-        classPropertiesAllowed: false,
       },
     ],
     'react/jsx-filename-extension': [
@@ -93,5 +85,6 @@ module.exports = {
         explicitSpread: 'ignore',
       },
     ],
+    'react/prop-types': 0,
   },
 };

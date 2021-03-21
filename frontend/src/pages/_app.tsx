@@ -3,10 +3,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import React from 'react';
-import { AppTemplate } from '../components/templates/App/views';
 import { ThemeProvider } from 'styled-components';
+import { AppTemplate } from '../components/templates/App/views';
 import theme from '../styles/theme';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     // Remove the server-side injected CSS.

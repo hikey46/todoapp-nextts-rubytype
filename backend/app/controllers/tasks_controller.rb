@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    render :index, formats: :json, handlers: :jbuilder
   end
 
   # GET /tasks/1
